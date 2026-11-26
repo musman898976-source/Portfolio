@@ -2156,18 +2156,61 @@ textarea.form-control {
 
 @media (max-width: 860px) {
   section {
-    padding: 68px 0;
+    padding: 60px 0;
+  }
+  .hero-grid {
+    gap: 24px;
   }
   .hero-title {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
+  }
+  .hero-visual {
+    max-width: 190px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .hero-image-card {
+    padding: 8px;
+  }
+  .hero-photo-wrapper {
+    aspect-ratio: 1 / 1;
+  }
+  .hero-image-footer {
+    margin-top: 8px;
+    padding: 6px 8px;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+  .hero-credential-tag {
+    font-size: 0.62rem;
+  }
+  .hero-location-tag {
+    font-size: 0.68rem;
   }
   .nav-menu {
     display: none;
   }
   .mobile-menu-toggle {
+    display: none !important;
+  }
+  .mobile-bottom-nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+  .whatsapp-float {
+    bottom: 86px;
+    right: 12px;
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+  .back-to-top {
+    bottom: 134px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+  }
+  .site-footer {
+    padding-bottom: 96px;
   }
   .about-grid {
     grid-template-columns: 1fr;
@@ -2194,27 +2237,30 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
   .modal-container {
-    max-height: 95vh;
+    max-height: 92vh;
   }
 }
 
 @media (max-width: 540px) {
   .container {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   section {
-    padding: 56px 0;
+    padding: 48px 0;
+  }
+  .hero-visual {
+    max-width: 155px;
   }
   .hero-title {
-    font-size: 2.15rem;
+    font-size: 2.05rem;
   }
   .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
   .metrics-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 16px;
   }
   .hero-cta-group {
     flex-direction: column;
@@ -2245,4 +2291,155 @@ textarea.form-control {
   .footer-nav {
     justify-content: center;
   }
+}
+
+/* ==========================================================================
+   Form Validation, Status Banner, WhatsApp Pill & Mobile Bottom Floating Bar
+   ========================================================================== */
+.form-control.is-invalid {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+.form-control.is-valid {
+  border-color: #059669;
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #DC2626;
+  min-height: 18px;
+}
+
+.form-status {
+  margin-top: 14px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all 0.25s ease;
+}
+
+.form-status.success {
+  padding: 12px 14px;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+}
+
+.form-status.error {
+  padding: 12px 14px;
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #991B1B;
+}
+
+.form-status.loading {
+  padding: 12px 14px;
+  background-color: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1E40AF;
+}
+
+/* Floating WhatsApp Action Pill */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 960;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 10px;
+  background-color: #FFFFFF;
+  color: #111827;
+  border: 1.5px solid #25D366;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  background-color: #F0FDF4;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.25);
+  color: #111827;
+}
+
+.whatsapp-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.whatsapp-number {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.back-to-top {
+  bottom: 80px;
+}
+
+/* Mobile Bottom Floating Navigation Bar (YouTube / LinkedIn Style) */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  height: 62px;
+  padding: 4px 6px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+  align-items: center;
+  justify-content: space-around;
+  z-index: 990;
+}
+
+.bottom-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 50px;
+  border-radius: 12px;
+  color: #6B7280;
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.bottom-nav-item svg {
+  transition: transform 0.2s ease;
+}
+
+.bottom-nav-item.active {
+  color: var(--accent-color);
+  background-color: rgba(37, 99, 235, 0.08);
+}
+
+.bottom-nav-item.active svg {
+  transform: translateY(-1px);
 }

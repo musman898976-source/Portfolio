@@ -3615,7 +3615,24 @@ function initScrollSpy() {
   const header = document.getElementById("siteHeader");
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
+  const bottomNavLinks = document.querySelectorAll(".bottom-nav-item");
   const backToTop = document.getElementById("backToTop");
+
+  function setActiveNav(id) {
+    navLinks.forEach(link => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+    });
+    bottomNavLinks.forEach(link => {
+      link.classList.toggle("active", link.getAttribute("data-section") === id);
+    });
+  }
+
+  bottomNavLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const targetId = link.getAttribute("data-section");
+      if (targetId) setActiveNav(targetId);
+    });
+  });
 
   window.addEventListener("scroll", () => {
     const scrollY = window.pageYOffset;
@@ -3641,7 +3658,7 @@ function initScrollSpy() {
     // ScrollSpy active state
     let currentId = "";
     sections.forEach(sec => {
-      const secTop = sec.offsetTop - 120;
+      const secTop = sec.offsetTop - 130;
       const secHeight = sec.offsetHeight;
       if (scrollY >= secTop && scrollY < secTop + secHeight) {
         currentId = sec.getAttribute("id");
@@ -3649,12 +3666,7 @@ function initScrollSpy() {
     });
 
     if (currentId) {
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${currentId}`) {
-          link.classList.add("active");
-        }
-      });
+      setActiveNav(currentId);
     }
   }, { passive: true });
 
@@ -3665,6 +3677,130 @@ function initScrollSpy() {
   }
 }
 
+// Strict Email Validation & Netlify Forms Submission
+function isValidEmail(email) {
+  const trimmed = (email || "").trim();
+  if (!trimmed || trimmed.length > 254) return false;
+  if (trimmed.includes("..")) return false;
+  const parts = trimmed.split("@");
+  if (parts.length !== 2) return false;
+  const [local, domain] = parts;
+  if (!local || local.startsWith(".") || local.endsWith(".")) return false;
+  if (!domain || domain.startsWith("-") || domain.endsWith("-")) return false;
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+  if (!emailRegex.test(trimmed)) return false;
+  const tld = domain.split(".").pop();
+  return /^[a-zA-Z]{2,}$/.test(tld);
+}
+
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+
+  const nameInput = document.getElementById("contactName");
+  const emailInput = document.getElementById("contactEmail");
+  const serviceInput = document.getElementById("contactService");
+  const messageInput = document.getElementById("contactMessage");
+  const submitBtn = document.getElementById("contactSubmitBtn");
+  const statusEl = document.getElementById("formStatus");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const messageError = document.getElementById("messageError");
+
+  function setFieldState(input, errorEl, isValid, msg) {
+    if (!input || !errorEl) return;
+    if (isValid) {
+      input.classList.remove("is-invalid");
+      input.classList.add("is-valid");
+      errorEl.textContent = "";
+    } else {
+      input.classList.remove("is-valid");
+      input.classList.add("is-invalid");
+      errorEl.textContent = msg;
+    }
+  }
+
+  function validateName() {
+    const val = (nameInput.value || "").trim();
+    const ok = val.length >= 2;
+    setFieldState(nameInput, nameError, ok, ok ? "" : "Please enter your full name (at least 2 characters).");
+    return ok;
+  }
+
+  function validateEmail() {
+    const val = (emailInput.value || "").trim();
+    const ok = isValidEmail(val);
+    setFieldState(emailInput, emailError, ok, ok ? "" : "Please enter a valid email address (e.g. name@company.com).");
+    return ok;
+  }
+
+  function validateMessage() {
+    const val = (messageInput.value || "").trim();
+    const ok = val.length >= 10;
+    setFieldState(messageInput, messageError, ok, ok ? "" : "Please describe your project scope (at least 10 characters).");
+    return ok;
+  }
+
+  nameInput.addEventListener("blur", validateName);
+  emailInput.addEventListener("blur", validateEmail);
+  emailInput.addEventListener("input", () => {
+    if (emailInput.classList.contains("is-invalid") || emailInput.classList.contains("is-valid")) {
+      validateEmail();
+    }
+  });
+  messageInput.addEventListener("blur", validateMessage);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const okName = validateName();
+    const okEmail = validateEmail();
+    const okMsg = validateMessage();
+    if (!okName || !okEmail || !okMsg) {
+      statusEl.className = "form-status error";
+      statusEl.textContent = "Please fix the highlighted fields above before submitting.";
+      return;
+    }
+
+    const btnText = submitBtn.querySelector(".btn-text");
+    submitBtn.disabled = true;
+    if (btnText) btnText.textContent = "Sending Inquiry...";
+    statusEl.className = "form-status loading";
+    statusEl.textContent = "Submitting your project brief...";
+
+    try {
+      const formData = new FormData(form);
+      formData.set("form-name", "contact");
+      formData.set("name", nameInput.value.trim());
+      formData.set("email", emailInput.value.trim());
+      formData.set("service", serviceInput ? serviceInput.value : "");
+      formData.set("message", messageInput.value.trim());
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
+        statusEl.className = "form-status success";
+        statusEl.textContent = "Thank you! Your inquiry has been received. Muhammad Usman will reply to " + emailInput.value.trim() + " shortly.";
+        form.reset();
+        [nameInput, emailInput, messageInput].forEach(el => el.classList.remove("is-valid", "is-invalid"));
+      } else {
+        throw new Error("Server responded with status " + response.status);
+      }
+    } catch (err) {
+      statusEl.className = "form-status error";
+      statusEl.innerHTML = 'Unable to send automatically right now. Please email directly at <a href="mailto:musman898976@gmail.com">musman898976@gmail.com</a> or message on <a href="https://wa.me/923207451859" target="_blank" rel="noopener">WhatsApp (+92 320 7451859)</a>.';
+    } finally {
+      submitBtn.disabled = false;
+      if (btnText) btnText.textContent = "Submit Project Inquiry";
+    }
+  });
+}
+
 // Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   updateFilterCounts();
@@ -3673,4 +3809,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initModalHandlers();
   initMobileNav();
   initScrollSpy();
+  initContactForm();
 });
