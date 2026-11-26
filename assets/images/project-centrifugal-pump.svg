@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-proj-45" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+    </pattern>
+    <linearGradient id="hudGrad-proj-45" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="380" fill="#090d16"/>
+  <rect width="600" height="380" fill="url(#grid-proj-45)"/>
+
+  <!-- CAD Viewport Overlay Frames -->
+  <rect x="20" y="20" width="560" height="340" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <rect x="25" y="25" width="550" height="330" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="0.8"/>
+
+  <!-- Title Block (Top Left) -->
+  <rect x="28" y="28" width="220" height="70" rx="3" fill="url(#hudGrad-proj-45)" stroke="#38bdf8" stroke-width="0.8" opacity="0.9"/>
+  <text x="35" y="44" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="12" font-weight="bold" letter-spacing="1">PROJ-45 // SOLIDWORKS CAD</text>
+  
+        <text x="35" y="58" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">DISCIPLINE:</text>
+        <text x="110" y="58" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Fluid Handling</text>
+        
+        <text x="35" y="72" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">MATERIAL:</text>
+        <text x="110" y="72" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Cast Iron Casing &amp; SS 316 Impeller</text>
+        
+        <text x="35" y="86" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">STANDARD:</text>
+        <text x="110" y="86" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">ISO 2858 / ANSI Standard</text>
+        
+        <text x="35" y="100" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">STATUS:</text>
+        <text x="110" y="100" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Hydraulic Layout Approved</text>
+        
+
+  <!-- Viewport Orientation Cube (Top Right) -->
+  <g transform="translate(520, 35)">
+    <polygon points="20,0 40,10 20,20 0,10" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <polygon points="0,10 20,20 20,40 0,30" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <polygon points="20,20 40,10 40,30 20,40" fill="none" stroke="#0284c7" stroke-width="1"/>
+    <text x="17" y="13" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">TOP</text>
+    <text x="5" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">FRONT</text>
+    <text x="25" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">RIGHT</text>
+  </g>
+
+  <!-- Central Engineering Geometry -->
+  
+  <g transform="translate(300, 205)">
+    <!-- Heavy Structural Skid Bed -->
+    <rect x="-140" y="65" width="280" height="20" rx="3" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Centrifugal Volute Casing (Right) -->
+    <circle cx="65" cy="20" r="45" fill="none" stroke="#38bdf8" stroke-width="2.2"/>
+    <circle cx="65" cy="20" r="24" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <circle cx="65" cy="20" r="7" fill="#38bdf8"/>
+    
+    <!-- Top Flanged Discharge Nozzle -->
+    <rect x="50" y="-55" width="30" height="35" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+    <rect x="42" y="-65" width="46" height="10" rx="2" fill="none" stroke="#f8fafc" stroke-width="1.8"/>
+
+    <!-- Bearing Bracket & Stuffing Box -->
+    <rect x="-15" y="5" width="45" height="30" rx="2" fill="none" stroke="#0ea5e9" stroke-width="1.5"/>
+
+    <!-- Flexible Shaft Coupling & Guard -->
+    <rect x="-45" y="8" width="25" height="24" fill="none" stroke="#f8fafc" stroke-width="1.5"/>
+
+    <!-- Electric Motor Body (Left) -->
+    <rect x="-135" y="-15" width="85" height="70" rx="4" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+    <line x1="-125" y1="-15" x2="-125" y2="55" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="-110" y1="-15" x2="-110" y2="55" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="-95" y1="-15" x2="-95" y2="55" stroke="#94a3b8" stroke-width="1"/>
+  </g>
+
+
+  <!-- Lower Engineering Status Bar -->
+  <rect x="28" y="328" width="544" height="24" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="42" cy="340" r="4" fill="#10b981"/>
+  <text x="52" y="343" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="9">SOLIDWORKS 3D MODEL &amp; ASSEMBLY ACTIVE | VERIFIED COMPONENT TOLERANCES</text>
+  <text x="460" y="343" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="9" font-weight="bold">SCALE 1:1 [METRIC]</text>
+</svg>
