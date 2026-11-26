@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-proj-04" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+    </pattern>
+    <linearGradient id="hudGrad-proj-04" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="380" fill="#090d16"/>
+  <rect width="600" height="380" fill="url(#grid-proj-04)"/>
+
+  <!-- CAD Viewport Overlay Frames -->
+  <rect x="20" y="20" width="560" height="340" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <rect x="25" y="25" width="550" height="330" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="0.8"/>
+
+  <!-- Title Block (Top Left) -->
+  <rect x="28" y="28" width="220" height="70" rx="3" fill="url(#hudGrad-proj-04)" stroke="#38bdf8" stroke-width="0.8" opacity="0.9"/>
+  <text x="35" y="44" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="12" font-weight="bold" letter-spacing="1">PROJ-04 // SOLIDWORKS CAD</text>
+  
+        <text x="35" y="58" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">DISCIPLINE:</text>
+        <text x="110" y="58" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Fluid Systems</text>
+        
+        <text x="35" y="72" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">MATERIAL:</text>
+        <text x="110" y="72" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Ductile Iron Casing &amp; SS 316</text>
+        
+        <text x="35" y="86" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">TOLERANCES:</text>
+        <text x="110" y="86" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">ISO H7 / h6 Bearing Bores</text>
+        
+        <text x="35" y="100" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">STATUS:</text>
+        <text x="110" y="100" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Flange &amp; Layout Approved</text>
+        
+
+  <!-- Viewport Orientation Cube (Top Right) -->
+  <g transform="translate(520, 35)">
+    <polygon points="20,0 40,10 20,20 0,10" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <polygon points="0,10 20,20 20,40 0,30" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <polygon points="20,20 40,10 40,30 20,40" fill="none" stroke="#0284c7" stroke-width="1"/>
+    <text x="17" y="13" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">TOP</text>
+    <text x="5" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">FRONT</text>
+    <text x="25" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">RIGHT</text>
+  </g>
+
+  <!-- Central Engineering Geometry -->
+  
+  <g transform="translate(300, 205)">
+    <!-- Base Mounting Skid -->
+    <rect x="-140" y="65" width="280" height="20" rx="3" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Electric Drive Motor -->
+    <rect x="-130" y="-15" width="90" height="70" rx="4" fill="none" stroke="#0ea5e9" stroke-width="1.8"/>
+    <!-- Motor Cooling Fins -->
+    <line x1="-120" y1="-15" x2="-120" y2="55" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="-105" y1="-15" x2="-105" y2="55" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="-90" y1="-15" x2="-90" y2="55" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="-75" y1="-15" x2="-75" y2="55" stroke="#94a3b8" stroke-width="1"/>
+    <rect x="-140" y="-5" width="10" height="50" rx="2" fill="none" stroke="#0ea5e9" stroke-width="1.2"/>
+
+    <!-- Coupling Guard -->
+    <rect x="-40" y="5" width="30" height="35" fill="none" stroke="#f8fafc" stroke-width="1.4" stroke-dasharray="3 2"/>
+
+    <!-- Centrifugal Pump Volute Casing -->
+    <circle cx="45" cy="22" r="45" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="45" cy="22" r="25" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="4 2"/>
+    <circle cx="45" cy="22" r="7" fill="#38bdf8"/>
+
+    <!-- Suction Flange (Horizontal Axial Inlet) -->
+    <rect x="90" y="7" width="30" height="30" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+    <rect x="120" y="-2" width="10" height="48" rx="2" fill="none" stroke="#f8fafc" stroke-width="1.8"/>
+
+    <!-- Discharge Flange (Vertical Upward Outlet) -->
+    <rect x="30" y="-60" width="30" height="40" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+    <rect x="22" y="-70" width="46" height="10" rx="2" fill="none" stroke="#f8fafc" stroke-width="1.8"/>
+    <!-- Pressure Gauge -->
+    <line x1="45" y1="-70" x2="45" y2="-90" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="45" cy="-98" r="10" fill="none" stroke="#ef4444" stroke-width="1.4"/>
+  </g>
+
+
+  <!-- Lower Engineering Status Bar -->
+  <rect x="28" y="328" width="544" height="24" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="42" cy="340" r="4" fill="#10b981"/>
+  <text x="52" y="343" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="9">SOLIDWORKS 3D MODEL &amp; ASSEMBLY ACTIVE | VERIFIED COMPONENT TOLERANCES</text>
+  <text x="460" y="343" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="9" font-weight="bold">SCALE 1:1 [METRIC]</text>
+</svg>
