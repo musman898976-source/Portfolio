@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-proj-27" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+    </pattern>
+    <linearGradient id="hudGrad-proj-27" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="380" fill="#090d16"/>
+  <rect width="600" height="380" fill="url(#grid-proj-27)"/>
+
+  <!-- CAD Viewport Overlay Frames -->
+  <rect x="20" y="20" width="560" height="340" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <rect x="25" y="25" width="550" height="330" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="0.8"/>
+
+  <!-- Title Block (Top Left) -->
+  <rect x="28" y="28" width="220" height="70" rx="3" fill="url(#hudGrad-proj-27)" stroke="#38bdf8" stroke-width="0.8" opacity="0.9"/>
+  <text x="35" y="44" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="12" font-weight="bold" letter-spacing="1">PROJ-27 // SOLIDWORKS CAD</text>
+  
+        <text x="35" y="58" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">DISCIPLINE:</text>
+        <text x="110" y="58" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Industrial Automation</text>
+        
+        <text x="35" y="72" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">MATERIAL:</text>
+        <text x="110" y="72" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">SS 304 Contact &amp; Structural Skid</text>
+        
+        <text x="35" y="86" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">SYSTEM:</text>
+        <text x="110" y="86" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Photoelectric Vision &amp; Diverter</text>
+        
+        <text x="35" y="100" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">STATUS:</text>
+        <text x="110" y="100" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Station Layout Approved</text>
+        
+
+  <!-- Viewport Orientation Cube (Top Right) -->
+  <g transform="translate(520, 35)">
+    <polygon points="20,0 40,10 20,20 0,10" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <polygon points="0,10 20,20 20,40 0,30" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <polygon points="20,20 40,10 40,30 20,40" fill="none" stroke="#0284c7" stroke-width="1"/>
+    <text x="17" y="13" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">TOP</text>
+    <text x="5" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">FRONT</text>
+    <text x="25" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">RIGHT</text>
+  </g>
+
+  <!-- Central Engineering Geometry -->
+  
+  <g transform="translate(300, 205)">
+    <!-- Floor Line & Leveling Feet -->
+    <line x1="-150" y1="75" x2="150" y2="75" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 3"/>
+
+    <!-- Dual Upright Support Frames -->
+    <rect x="-120" y="20" width="10" height="55" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="0" y="20" width="10" height="55" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="110" y="20" width="10" height="55" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <!-- Diagonal Braces -->
+    <line x1="-110" y1="25" x2="0" y2="70" stroke="#0ea5e9" stroke-width="1.2"/>
+    <line x1="10" y1="25" x2="110" y2="70" stroke="#0ea5e9" stroke-width="1.2"/>
+
+    <!-- Conveyor Belt Bed & End Rollers -->
+    <rect x="-140" y="10" width="280" height="14" rx="2" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="-135" cy="17" r="8" fill="none" stroke="#f8fafc" stroke-width="1.5"/>
+    <circle cx="135" cy="17" r="8" fill="none" stroke="#f8fafc" stroke-width="1.5"/>
+
+    <!-- Vision Inspection Sensor Station & Sorting Pneumatic Pusher -->
+    <polygon points="-40,10 -40,-45 40,-45 40,10" fill="none" stroke="#f8fafc" stroke-width="1.8"/>
+    <circle cx="0" cy="-35" r="4" fill="#ef4444"/>
+    <line x1="0" y1="-31" x2="0" y2="5" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="2 2"/>
+
+    <!-- Pneumatic Diverter Arm (Right Sorting Gate) -->
+    <line x1="60" y1="10" x2="95" y2="-15" stroke="#10b981" stroke-width="3"/>
+    <circle cx="60" cy="10" r="4" fill="#10b981"/>
+
+    <!-- Carried Pallets / Boxes -->
+    <rect x="-95" y="-8" width="24" height="18" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="15" y="-8" width="24" height="18" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+  </g>
+
+
+  <!-- Lower Engineering Status Bar -->
+  <rect x="28" y="328" width="544" height="24" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="42" cy="340" r="4" fill="#10b981"/>
+  <text x="52" y="343" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="9">SOLIDWORKS 3D MODEL &amp; ASSEMBLY ACTIVE | VERIFIED COMPONENT TOLERANCES</text>
+  <text x="460" y="343" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="9" font-weight="bold">SCALE 1:1 [METRIC]</text>
+</svg>
