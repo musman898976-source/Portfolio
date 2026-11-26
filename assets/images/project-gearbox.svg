@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-proj-07" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+    </pattern>
+    <linearGradient id="hudGrad-proj-07" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="380" fill="#090d16"/>
+  <rect width="600" height="380" fill="url(#grid-proj-07)"/>
+
+  <!-- CAD Viewport Overlay Frames -->
+  <rect x="20" y="20" width="560" height="340" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <rect x="25" y="25" width="550" height="330" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="0.8"/>
+
+  <!-- Title Block (Top Left) -->
+  <rect x="28" y="28" width="220" height="70" rx="3" fill="url(#hudGrad-proj-07)" stroke="#38bdf8" stroke-width="0.8" opacity="0.9"/>
+  <text x="35" y="44" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="12" font-weight="bold" letter-spacing="1">PROJ-07 // SOLIDWORKS CAD</text>
+  
+        <text x="35" y="58" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">DISCIPLINE:</text>
+        <text x="110" y="58" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Mechanical Assemblies</text>
+        
+        <text x="35" y="72" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">MATERIAL:</text>
+        <text x="110" y="72" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Cast Iron Housing &amp; Alloy Steel</text>
+        
+        <text x="35" y="86" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">TOLERANCES:</text>
+        <text x="110" y="86" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">ISO H7 / h6 Bearing Fits</text>
+        
+        <text x="35" y="100" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">STATUS:</text>
+        <text x="110" y="100" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Mesh &amp; Gear Ratio Validated</text>
+        
+
+  <!-- Viewport Orientation Cube (Top Right) -->
+  <g transform="translate(520, 35)">
+    <polygon points="20,0 40,10 20,20 0,10" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <polygon points="0,10 20,20 20,40 0,30" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <polygon points="20,20 40,10 40,30 20,40" fill="none" stroke="#0284c7" stroke-width="1"/>
+    <text x="17" y="13" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">TOP</text>
+    <text x="5" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">FRONT</text>
+    <text x="25" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">RIGHT</text>
+  </g>
+
+  <!-- Central Engineering Geometry -->
+  
+  <g transform="translate(300, 200)">
+    <!-- Gearbox Housing Outer Profile -->
+    <rect x="-135" y="-80" width="270" height="160" rx="10" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="-120" y="-65" width="240" height="130" rx="6" fill="none" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Mounting Flanges & Fasteners -->
+    <circle cx="-125" cy="-70" r="3" fill="#38bdf8"/>
+    <circle cx="125" cy="-70" r="3" fill="#38bdf8"/>
+    <circle cx="-125" cy="70" r="3" fill="#38bdf8"/>
+    <circle cx="125" cy="70" r="3" fill="#38bdf8"/>
+
+    <!-- Input Pinion Gear (Small) -->
+    <circle cx="-55" cy="0" r="42" fill="none" stroke="#0ea5e9" stroke-width="1.6"/>
+    <circle cx="-55" cy="0" r="46" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2 3"/>
+    <circle cx="-55" cy="0" r="36" fill="none" stroke="#94a3b8" stroke-width="1"/>
+    <circle cx="-55" cy="0" r="14" fill="none" stroke="#f8fafc" stroke-width="1.5"/>
+    <circle cx="-55" cy="0" r="6" fill="#38bdf8"/>
+    <!-- Gear Teeth Indications -->
+    <line x1="-55" y1="-46" x2="-55" y2="-36" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="-55" y1="46" x2="-55" y2="36" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="-101" y1="0" x2="-91" y2="0" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="-9" y1="0" x2="-19" y2="0" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- Driven Bull Gear (Large) -->
+    <circle cx="45" cy="0" r="68" fill="none" stroke="#0ea5e9" stroke-width="1.8"/>
+    <circle cx="45" cy="0" r="72" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2 3"/>
+    <circle cx="45" cy="0" r="60" fill="none" stroke="#94a3b8" stroke-width="1"/>
+    <circle cx="45" cy="0" r="20" fill="none" stroke="#f8fafc" stroke-width="1.5"/>
+    <circle cx="45" cy="0" r="8" fill="#38bdf8"/>
+
+    <!-- Center Distance Callout -->
+    <line x1="-55" y1="0" x2="45" y2="0" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 2"/>
+    <line x1="-55" y1="-85" x2="-55" y2="-65" stroke="#64748b" stroke-width="1"/>
+    <line x1="45" y1="-85" x2="45" y2="-65" stroke="#64748b" stroke-width="1"/>
+    <line x1="-55" y1="-75" x2="45" y2="-75" stroke="#ef4444" stroke-width="1"/>
+    <text x="-15" y="-80" fill="#ef4444" font-family="'Times New Roman', serif" font-size="9">CD: 100.00 mm</text>
+  </g>
+
+
+  <!-- Lower Engineering Status Bar -->
+  <rect x="28" y="328" width="544" height="24" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="42" cy="340" r="4" fill="#10b981"/>
+  <text x="52" y="343" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="9">SOLIDWORKS 3D MODEL &amp; ASSEMBLY ACTIVE | VERIFIED COMPONENT TOLERANCES</text>
+  <text x="460" y="343" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="9" font-weight="bold">SCALE 1:1 [METRIC]</text>
+</svg>
