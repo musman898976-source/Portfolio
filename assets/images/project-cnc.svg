@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-proj-01" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+    </pattern>
+    <linearGradient id="hudGrad-proj-01" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="380" fill="#090d16"/>
+  <rect width="600" height="380" fill="url(#grid-proj-01)"/>
+
+  <!-- CAD Viewport Overlay Frames -->
+  <rect x="20" y="20" width="560" height="340" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <rect x="25" y="25" width="550" height="330" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="0.8"/>
+
+  <!-- Title Block (Top Left) -->
+  <rect x="28" y="28" width="220" height="70" rx="3" fill="url(#hudGrad-proj-01)" stroke="#38bdf8" stroke-width="0.8" opacity="0.9"/>
+  <text x="35" y="44" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="12" font-weight="bold" letter-spacing="1">PROJ-01 // SOLIDWORKS CAD</text>
+  
+        <text x="35" y="58" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">DISCIPLINE:</text>
+        <text x="110" y="58" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Industrial Machinery</text>
+        
+        <text x="35" y="72" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">MATERIAL:</text>
+        <text x="110" y="72" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Cast Iron &amp; AL 6061-T6 Gantry</text>
+        
+        <text x="35" y="86" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">SOFTWARE:</text>
+        <text x="110" y="86" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">SolidWorks 3D CAD &amp; Assembly</text>
+        
+        <text x="35" y="100" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">STATUS:</text>
+        <text x="110" y="100" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Gantry Kinematics Verified</text>
+        
+
+  <!-- Viewport Orientation Cube (Top Right) -->
+  <g transform="translate(520, 35)">
+    <polygon points="20,0 40,10 20,20 0,10" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <polygon points="0,10 20,20 20,40 0,30" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <polygon points="20,20 40,10 40,30 20,40" fill="none" stroke="#0284c7" stroke-width="1"/>
+    <text x="17" y="13" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">TOP</text>
+    <text x="5" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">FRONT</text>
+    <text x="25" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">RIGHT</text>
+  </g>
+
+  <!-- Central Engineering Geometry -->
+  
+  <g transform="translate(300, 205)">
+    <!-- Base Machine Frame & T-Slot Bed -->
+    <rect x="-140" y="55" width="280" height="35" rx="3" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="-130" y1="67" x2="130" y2="67" stroke="#0ea5e9" stroke-width="1"/>
+    <line x1="-130" y1="78" x2="130" y2="78" stroke="#0ea5e9" stroke-width="1"/>
+    
+    <!-- Heavy Cast Gantry Uprights -->
+    <path d="M -115 55 L -100 -55 L -60 -55 L -75 55 Z" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+    <path d="M 115 55 L 100 -55 L 60 -55 L 75 55 Z" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+
+    <!-- Gantry Cross Bridge (X-Axis) -->
+    <rect x="-100" y="-55" width="200" height="40" rx="3" fill="none" stroke="#f8fafc" stroke-width="1.8"/>
+    <!-- Dual Linear Rails on Bridge -->
+    <line x1="-95" y1="-45" x2="95" y2="-45" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="-95" y1="-25" x2="95" y2="-25" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <!-- Z-Axis Saddle Carriage & High-Frequency Spindle -->
+    <rect x="-25" y="-60" width="50" height="75" rx="2" fill="none" stroke="#0ea5e9" stroke-width="1.6"/>
+    <!-- Ballscrew Z-Axis -->
+    <line x1="0" y1="-55" x2="0" y2="10" stroke="#94a3b8" stroke-width="2" stroke-dasharray="3 1"/>
+    <!-- Spindle Motor Body -->
+    <rect x="-16" y="-15" width="32" height="48" rx="3" fill="none" stroke="#f8fafc" stroke-width="2"/>
+    <!-- Collet & Tooling Bit -->
+    <polygon points="-8,33 8,33 4,45 -4,45" fill="#38bdf8"/>
+    <line x1="0" y1="45" x2="0" y2="55" stroke="#ef4444" stroke-width="2.2"/>
+    <circle cx="0" cy="55" r="2" fill="#ef4444"/>
+
+    <!-- Stepper / Servo Motors -->
+    <rect x="100" y="-45" width="22" height="22" rx="2" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="-16" y="-78" width="32" height="18" rx="2" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+  </g>
+
+
+  <!-- Lower Engineering Status Bar -->
+  <rect x="28" y="328" width="544" height="24" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="42" cy="340" r="4" fill="#10b981"/>
+  <text x="52" y="343" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="9">SOLIDWORKS 3D MODEL &amp; ASSEMBLY ACTIVE | VERIFIED COMPONENT TOLERANCES</text>
+  <text x="460" y="343" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="9" font-weight="bold">SCALE 1:1 [METRIC]</text>
+</svg>
