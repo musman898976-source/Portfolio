@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-perfume" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+    </pattern>
+    <linearGradient id="hudGradPerfume" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="380" fill="#090d16"/>
+  <rect width="600" height="380" fill="url(#grid-perfume)"/>
+
+  <!-- CAD Viewport Overlay Frames -->
+  <rect x="20" y="20" width="560" height="340" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="20" cy="20" r="2" fill="#38bdf8"/>
+  <circle cx="580" cy="20" r="2" fill="#38bdf8"/>
+  <circle cx="20" cy="360" r="2" fill="#38bdf8"/>
+  <circle cx="580" cy="360" r="2" fill="#38bdf8"/>
+
+  <!-- Corner Reticles -->
+  <path d="M 30 20 L 20 20 L 20 30" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M 570 20 L 580 20 L 580 30" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M 30 360 L 20 360 L 20 350" fill="none" stroke="#38bdf8" stroke-width="2"/>
+  <path d="M 570 360 L 580 360 L 580 350" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+  <!-- Header HUD Tag -->
+  <text x="35" y="42" fill="#10b981" font-family="'Times New Roman', serif" font-size="11" letter-spacing="1.5">PROJ-01 // CLIENT DELIVERABLE</text>
+  <text x="35" y="58" fill="#f8fafc" font-family="'Times New Roman', serif" font-weight="bold" font-size="14">CUSTOM PERFUME BOTTLE DESIGN</text>
+  <text x="565" y="42" text-anchor="end" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10">PET BODY + PP CAP // 3D PROTOTYPED</text>
+  <line x1="35" y1="68" x2="565" y2="68" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Geometry: Perfume Bottle Silhouette and Dimension Lines -->
+  <g id="geometry" transform="translate(50, 0)">
+    <!-- Centerline -->
+    <line x1="250" y1="80" x2="250" y2="320" stroke="#64748b" stroke-width="1" stroke-dasharray="10 3 2 3"/>
+
+    <!-- Cap Profile (PP Injection Molded) -->
+    <rect x="220" y="90" width="60" height="45" rx="3" fill="rgba(56, 189, 248, 0.08)" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="220" y1="105" x2="280" y2="105" stroke="#2563eb" stroke-dasharray="2 2"/>
+    <rect x="235" y="82" width="30" height="8" rx="2" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <!-- Neck Finish and Threads -->
+    <rect x="230" y="135" width="40" height="20" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="228" y1="142" x2="272" y2="142" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="228" y1="148" x2="272" y2="148" stroke="#f59e0b" stroke-width="1.5"/>
+
+    <!-- Bottle Body (PET Stretch Blow Molded) -->
+    <path d="M 230 155 C 200 165, 175 190, 175 230 C 175 270, 185 300, 200 305 L 300 305 C 315 300, 325 270, 325 230 C 325 190, 300 165, 270 155 Z" 
+          fill="rgba(56, 189, 248, 0.05)" stroke="#38bdf8" stroke-width="2.5"/>
+
+    <!-- Internal Cavity / Wall Thickness representation -->
+    <path d="M 233 158 C 206 168, 182 192, 182 228 C 182 265, 191 294, 205 298 L 295 298 C 309 294, 318 265, 318 228 C 318 192, 294 168, 267 158 Z" 
+          fill="none" stroke="#2563eb" stroke-width="1.2" stroke-dasharray="4 2"/>
+
+    <!-- Base Push-up (punt) -->
+    <path d="M 215 305 Q 250 290 285 305" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <!-- Dimension Callouts -->
+    <line x1="150" y1="90" x2="150" y2="305" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="140" y1="90" x2="160" y2="90" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="140" y1="305" x2="160" y2="305" stroke="#94a3b8" stroke-width="1"/>
+    <text x="135" y="205" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="11" text-anchor="end">HEIGHT: 135.0 mm</text>
+
+    <!-- Diameter Callout -->
+    <line x1="175" y1="325" x2="325" y2="325" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="175" y1="315" x2="175" y2="335" stroke="#94a3b8" stroke-width="1"/>
+    <line x1="325" y1="315" x2="325" y2="335" stroke="#94a3b8" stroke-width="1"/>
+    <text x="250" y="340" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="11" text-anchor="middle">Ø 72.0 mm BODY</text>
+
+    <!-- Callout Tags -->
+    <text x="345" y="115" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10">&lt; PP INJECTION MOLDED CAP</text>
+    <text x="345" y="145" fill="#f59e0b" font-family="'Times New Roman', serif" font-size="10">&lt; M24 CONTINUOUS THREAD</text>
+    <text x="345" y="230" fill="#10b981" font-family="'Times New Roman', serif" font-size="10">&lt; PET BLOW MOLDED BODY</text>
+    <text x="345" y="250" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="9">WALL THICKNESS: 1.8 mm TYP</text>
+    <text x="345" y="270" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="9">3D PRINT PROTOTYPED &amp; SHIPPED</text>
+  </g>
+
+  <!-- Engineering Coordinates and Footer -->
+  <line x1="35" y1="350" x2="565" y2="350" stroke="#1e293b" stroke-width="1"/>
+  <text x="35" y="365" fill="#64748b" font-family="'Times New Roman', serif" font-size="9">CLIENT PROJECT: CUSTOM PERFUME BOTTLE | CAD: SOLIDWORKS | PROTOTYPE: 3D PRINTED</text>
+  <text x="565" y="365" text-anchor="end" fill="#10b981" font-family="'Times New Roman', serif" font-size="9">DELIVERED TO CLIENT</text>
+</svg>
