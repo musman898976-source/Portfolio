@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-proj-38" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.7"/>
+    </pattern>
+    <linearGradient id="hudGrad-proj-38" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="380" fill="#090d16"/>
+  <rect width="600" height="380" fill="url(#grid-proj-38)"/>
+
+  <!-- CAD Viewport Overlay Frames -->
+  <rect x="20" y="20" width="560" height="340" fill="none" stroke="#1e293b" stroke-width="1"/>
+  <rect x="25" y="25" width="550" height="330" fill="none" stroke="#334155" stroke-dasharray="4 4" stroke-width="0.8"/>
+
+  <!-- Title Block (Top Left) -->
+  <rect x="28" y="28" width="220" height="70" rx="3" fill="url(#hudGrad-proj-38)" stroke="#38bdf8" stroke-width="0.8" opacity="0.9"/>
+  <text x="35" y="44" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="12" font-weight="bold" letter-spacing="1">PROJ-38 // SOLIDWORKS CAD</text>
+  
+        <text x="35" y="58" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">DISCIPLINE:</text>
+        <text x="110" y="58" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Process Equipment</text>
+        
+        <text x="35" y="72" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">MATERIAL:</text>
+        <text x="110" y="72" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">SS 304 Vessel &amp; Structural Frame</text>
+        
+        <text x="35" y="86" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">AGITATOR:</text>
+        <text x="110" y="86" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Cowles Blade &amp; Reduction Drive</text>
+        
+        <text x="35" y="100" fill="#64748b" font-family="'Times New Roman', serif" font-size="10">STATUS:</text>
+        <text x="110" y="100" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="10" font-weight="bold">Mixing Clearance Verified</text>
+        
+
+  <!-- Viewport Orientation Cube (Top Right) -->
+  <g transform="translate(520, 35)">
+    <polygon points="20,0 40,10 20,20 0,10" fill="none" stroke="#38bdf8" stroke-width="1"/>
+    <polygon points="0,10 20,20 20,40 0,30" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <polygon points="20,20 40,10 40,30 20,40" fill="none" stroke="#0284c7" stroke-width="1"/>
+    <text x="17" y="13" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">TOP</text>
+    <text x="5" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">FRONT</text>
+    <text x="25" y="27" fill="#f8fafc" font-family="'Times New Roman', serif" font-size="8">RIGHT</text>
+  </g>
+
+  <!-- Central Engineering Geometry -->
+  
+  <g transform="translate(300, 205)">
+    <!-- Heavy Column Stand / Upright Tower Frame -->
+    <rect x="-115" y="-95" width="35" height="175" rx="3" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <!-- Floor Base Flange -->
+    <rect x="-135" y="70" width="85" height="15" rx="2" fill="none" stroke="#f8fafc" stroke-width="1.8"/>
+
+    <!-- Top Drive Head & Gearmotor Enclosure -->
+    <rect x="-120" y="-95" width="180" height="35" rx="4" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="15" cy="-77" r="10" fill="#0ea5e9"/>
+
+    <!-- Vertical Mixing Agitator Impeller Shaft -->
+    <line x1="15" y1="-60" x2="15" y2="40" stroke="#f8fafc" stroke-width="3.5"/>
+
+    <!-- Mixing Impeller Blades (Dual Cowles / Anchor Blades) -->
+    <line x1="-25" y1="35" x2="55" y2="35" stroke="#38bdf8" stroke-width="3"/>
+    <polygon points="-25,30 -25,45 -35,37" fill="#38bdf8"/>
+    <polygon points="55,30 55,45 65,37" fill="#38bdf8"/>
+
+    <!-- Stainless Steel Mixing Vessel / Tank Drum Profile -->
+    <path d="M -40 -15 L -40 55 C -40 75, 70 75, 70 55 L 70 -15" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="4 2"/>
+    <ellipse cx="15" cy="-15" rx="55" ry="12" fill="none" stroke="#f8fafc" stroke-width="1.5"/>
+  </g>
+
+
+  <!-- Lower Engineering Status Bar -->
+  <rect x="28" y="328" width="544" height="24" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="42" cy="340" r="4" fill="#10b981"/>
+  <text x="52" y="343" fill="#94a3b8" font-family="'Times New Roman', serif" font-size="9">SOLIDWORKS 3D MODEL &amp; ASSEMBLY ACTIVE | VERIFIED COMPONENT TOLERANCES</text>
+  <text x="460" y="343" fill="#38bdf8" font-family="'Times New Roman', serif" font-size="9" font-weight="bold">SCALE 1:1 [METRIC]</text>
+</svg>
